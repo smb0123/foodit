@@ -4,19 +4,18 @@ import mockItems from "../mock.json";
 
 function App() {
   const [order, setOrder] = useState("createdAt");
+  const [items, setItems] = useState(mockItems);
 
   const handleNewestClick = () => setOrder("createdAt");
 
   const handleCalorieClick = () => setOrder("calorie");
 
-  const [items, setItems] = useState(mockItems);
-
-  const sortedItems = items.sort((a, b) => b[order] - a[order]);
-
   const handleDelete = (id) => {
     const nextItems = items.filter((item) => item.id !== id);
     setItems(nextItems);
   };
+
+  const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
   return (
     <div>
