@@ -76,13 +76,12 @@ function App() {
         <button type="submit">검색</button>
       </form>
       <FoodList items={sortedItems} onDelete={handleDelete} />
-
       {cursor && (
         <button disabled={isLoading} onClick={handleLoadMore}>
           더보기
         </button>
       )}
-      {loadingError?.message && <p>{loadingError.message}</p>}
+      {loadingError && <p>{loadingError.message}</p>}
     </div>
   );
 }
