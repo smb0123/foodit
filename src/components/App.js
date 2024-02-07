@@ -23,8 +23,8 @@ function App() {
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
   useEffect(() => {
-    handleLoad();
-  }, []);
+    handleLoad(order);
+  }, [order]);
 
   return (
     <div>
